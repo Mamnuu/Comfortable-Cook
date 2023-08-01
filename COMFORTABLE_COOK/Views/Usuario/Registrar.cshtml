@@ -1,0 +1,39 @@
+﻿@model COMFORTABLE_COOK.Models.Usuario
+@{
+    ViewBag.Title = "Registrar";
+}
+<html>
+<head>
+    <title>Registrar</title>
+</head>
+<body style="background-color:#FFCCFF;">
+    <div>
+        <h3>Registrar</h3>
+
+        <form action="Registrar" method="post">
+            <table>
+                <tr>
+                    <td><label>Correo*:</label></td>
+                    <td><input type="email" name="correo" value="" required /></td>
+                    @Html.ValidationMessageFor(x => x.Correo, null, new { @class = "text-danger" })
+                </tr>
+                <tr>
+                    <td><label>Contraseña*: </label></td>
+                    <td><input type="password" name="clave" value="" required /></td>
+                    @Html.ValidationMessageFor(x => x.Clave, null, new { @class = "text-danger" })
+                </tr>
+                <tr>
+                    <td><input type="submit" name="Guardar" value="Guardar" /></td>
+                </tr>
+                <tr>
+                    <td style="padding-top: 20px;">
+                        <a href="/Usuario/Index">Cancelar</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+</body>
+</html>
+
